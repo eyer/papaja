@@ -145,6 +145,12 @@ apa6_pdf <- function(
       , "\n"
       , substr(output_text, start = abstract_location[1], stop = nchar(output_text))
     )
+   
+      output_text <- gsub(
+      "\\\\abstract{\n\n\n}"
+      , paste0("")
+      , output_text
+    )
 
     output_file_connection <- file(output_file)
     on.exit(close(output_file_connection))
