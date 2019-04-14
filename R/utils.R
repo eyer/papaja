@@ -404,7 +404,7 @@ corresponding_author_line <- function(x) {
   
   corresponding_line <- paste0(
     apa_terms$correspondence, x$name
-    , if(!is.null(x$address)) {", ", x$address,}
+    , if(!is.null(x$address)) {", ", x$address}
     , ". "}
     , if(!is.null(x$email)) {apa_terms$email, ": ", x$email}
   )
