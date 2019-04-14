@@ -134,6 +134,8 @@ apa6_pdf <- function(
     )
 
     abstract_location <- gregexpr(pattern = "\\\\abstract\\{", output_text)[[1]]
+    
+    abstract <- output_text
 
     output_text <- paste0(
       substr(output_text, start = 1, stop = abstract_location[1])
@@ -143,15 +145,9 @@ apa6_pdf <- function(
       , "\n"
       , note
       , "\n"
-      , substr(output_text, start = abstract_location[1], stop = nchar(output_text))
+      , substr(abstract, start = abstract_location[1], stop = nchar(abstract))
     )
    
-      output_text <- gsub(
-      "\\\\abstract{\n\n\n}"
-      , paste0("")
-      , output_text
-    )
-
     output_file_connection <- file(output_file)
     on.exit(close(output_file_connection))
     writeLines(output_text, output_file_connection, useBytes = TRUE)
