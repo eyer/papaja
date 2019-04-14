@@ -143,9 +143,9 @@ apa6_pdf <- function(
       , "\n"
       , note
       , "\n"
-      , length(abstract)
+      , length(output_text)
       , "\n"
-      , substr(abstract, start = abstract_location[1], stop = nchar(abstract))
+      , substr(output_text, start = abstract_location[1], stop = nchar(output_text))
     )
    
     output_file_connection <- file(output_file)
