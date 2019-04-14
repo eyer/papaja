@@ -129,11 +129,11 @@ apa6_pdf <- function(
 
     output_text <- gsub(
       "\\\\begin\\{document\\}\n\\\\maketitle\n\\\\begin\\{abstract\\}(.+)\\\\end\\{abstract\\}"
-      , paste0("\\\\abstract{ABC}\n\n\\\\begin\\{document\\}\n\\\\maketitle")
+      , paste0("\\\\abstract{\\\1}\n\n\\\\begin\\{document\\}\n\\\\maketitle")
       , output_text
     )
 
-    abstract_location <- gregexpr(pattern = "\\\\abstract\\{", output_text)[[1]]
+    abstract_location <- gregexpr(pattern = "\\\\abstract\\{ABC", output_text)[[1]]
 
     output_text <- paste0(
       substr(output_text, start = 1, stop = abstract_location[1])
