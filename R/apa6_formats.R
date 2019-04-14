@@ -384,12 +384,11 @@ pdf_pre_processor <- function(metadata, input_file, runtime, knit_meta, files_di
 
   yaml_params$author <- paste_authors(yaml_params$author, format = "latex")
 
-  # if(!is.null(yaml_params$abstract)) {
-  #   abstract <- yaml_params$abstract
-  #   yaml_params$abstract <- NULL
-  #
-  #   header_includes <- c(header_includes, paste0("\\abstract{", escape_latex(abstract), "}"))
-  # }
+  if(!is.null(yaml_params$abstract)) {
+    abstract <- yaml_params$abstract
+    yaml_params$abstract <- NULL
+      header_includes <- c(header_includes, paste0("\\abstract{", escape_latex(abstract), "}"))
+  }
 
   if(!is.null(yaml_params$keywords) || !is.null(yaml_params$wordcount)) {
     keywords <- paste(unlist(yaml_params$keywords), collapse = ", ")
