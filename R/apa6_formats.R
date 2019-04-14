@@ -141,6 +141,8 @@ apa6_pdf <- function(
       , "\n"
       , note
       , "\n"
+      , note
+      , "\n"
       , substr(output_text, start = abstract_location[1], stop = nchar(output_text))
     )
 
