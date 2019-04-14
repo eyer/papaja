@@ -369,6 +369,16 @@ pdf_pre_processor <- function(metadata, input_file, runtime, knit_meta, files_di
 
 
   #### Pass the following through abstract field so pandoc parses markdown
+  if(length(corresponding_author) == 0) {
+    author_note <- paste(
+      c(yaml_params$author_note, yaml_params$authornote)
+      , sep = "\n\n"
+    )
+
+    yaml_params$abstract <- paste0(yaml_params$abstract, "\n!!!papaja-author-note(", author_note, ")papaja-author-note!!!")
+    # header_includes <- c(header_includes, paste0("\\authornote{", escape_latex(author_note), "}"))
+  }
+  
   if(length(corresponding_author) > 0) {
     author_note <- paste(
       c(yaml_params$author_note, yaml_params$authornote)
