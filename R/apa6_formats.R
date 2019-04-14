@@ -129,7 +129,7 @@ apa6_pdf <- function(
 
     output_text <- gsub(
       "\\\\begin\\{document\\}\n\\\\maketitle\n\\\\begin\\{abstract\\}(.+)\\\\end\\{abstract\\}"
-      , paste0("\\\\abstract{\\\\1}\n\n\\\\begin\\{document\\}\n\\\\maketitle")
+      , paste0("\\\\abstract{\\1}\n\n\\\\begin\\{document\\}\n\\\\maketitle")
       , output_text
     )
 
@@ -141,8 +141,7 @@ apa6_pdf <- function(
       , "\n"
       , note
       , "\n"
-      , "ABC",
-      substr(output_text, start = abstract_location[1], stop = nchar(output_text))
+      , substr(output_text, start = abstract_location[1], stop = nchar(output_text))
     )
 
     output_file_connection <- file(output_file)
@@ -385,11 +384,12 @@ pdf_pre_processor <- function(metadata, input_file, runtime, knit_meta, files_di
 
   yaml_params$author <- paste_authors(yaml_params$author, format = "latex")
 
-  if(!is.null(yaml_params$abstract)) {
-    abstract <- yaml_params$abstract
-    yaml_params$abstract <- NULL
-      header_includes <- c(header_includes, paste0("\\abstract{", escape_latex(abstract), "}"))
-  }
+  # if(!is.null(yaml_params$abstract)) {
+  #   abstract <- yaml_params$abstract
+  #   yaml_params$abstract <- NULL
+  #
+  #   header_includes <- c(header_includes, paste0("\\abstract{", escape_latex(abstract), "}"))
+  # }
 
   if(!is.null(yaml_params$keywords) || !is.null(yaml_params$wordcount)) {
     keywords <- paste(unlist(yaml_params$keywords), collapse = ", ")
