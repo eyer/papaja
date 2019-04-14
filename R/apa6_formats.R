@@ -127,7 +127,7 @@ apa6_pdf <- function(
     output_text <- gsub("!!!papaja-author-note\\((.+)\\)papaja-author-note!!!", "", output_text)
     output_text <- gsub("!!!papaja-note\\((.+)\\)papaja-note!!!", "", output_text)
 
-    if(!is.null(abstract)) {
+    if(isTRUE(yaml_params$printabstract)) {
     output_text <- gsub(
       "\\\\begin\\{document\\}\n\\\\maketitle\n\\\\begin\\{abstract\\}(.+)\\\\end\\{abstract\\}"
       , paste0("\\\\abstract{\\1}\n\n\\\\begin\\{document\\}\n\\\\maketitle")
@@ -135,7 +135,7 @@ apa6_pdf <- function(
     )
       }
     
-    if(is.null(abstract)) {
+    if(isFALSE(yaml_params$printabstract)) {
     output_text <- gsub(
       "\\\\begin\\{document\\}\n\\\\maketitle\n\\\\begin\\{abstract\\}(.+)\\\\end\\{abstract\\}"
       , paste0("\\\\begin\\{document\\}\n\\\\maketitle")
