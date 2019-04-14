@@ -145,7 +145,7 @@ apa6_pdf <- function(
     )
     
     output_text <- gsub(
-      "\\\\abstract\\{\n\n\\}"
+      "\\\\abstract\\{(\n+)\\}"
       , ""
       , output_text
     )
