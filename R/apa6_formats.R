@@ -133,7 +133,7 @@ apa6_pdf <- function(
       , output_text
     )
 
-    abstract_location <- gregexpr(pattern = "\\\\abstract\\{ABC", output_text)[[1]]
+    abstract_location <- gregexpr(pattern = "\\\\abstract\\{", output_text)[]
 
     output_text <- paste0(
       substr(output_text, start = 1, stop = abstract_location[1])
