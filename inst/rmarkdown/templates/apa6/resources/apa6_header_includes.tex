@@ -29,6 +29,24 @@
 %\setlength{\parindent}{0.5in}
 %\setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+\makeatletter
+\ifapamodeman{%
+  \@ifundefined{def@noextraspace}{}{%
+    % redefine the vertical section spacing
+    \b@level@one@skip=0ex \@plus 0ex \@minus 0ex
+    \e@level@one@skip=0ex \@plus 0ex \@minus 0ex
+    \b@level@two@skip=0ex \@plus 0ex \@minus 0ex
+    \e@level@two@skip=0ex \@plus 0ex \@minus 0ex
+    \b@level@three@skip=0ex \@plus 0ex \@minus 0ex
+    \e@level@three@skip=-\z@
+    \b@level@four@skip=0ex \@plus 0ex \@minus 0ex
+    \e@level@four@skip=-\z@
+    \b@level@five@skip=0ex \@plus 0ex \@minus 0ex
+    \e@level@five@skip=0ex
+  }
+}{}
+\makeatother
+
 \ifluatex
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \setsansfont[Numbers=Lowercase,LetterSpace=3,ItalicFont={Hypatia Sans Pro},ItalicFeatures={FakeSlant=0.2},BoldItalicFont={Hypatia Sans Pro Semibold},BoldItalicFeatures={FakeSlant=0.2},BoldFont={Hypatia Sans Pro Semibold}]{Hypatia Sans Pro}
