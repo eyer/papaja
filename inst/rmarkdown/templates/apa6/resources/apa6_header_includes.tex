@@ -26,7 +26,7 @@
 \setlength{\longtablewidth}{1in}
 \newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
 
-%\usepackage{titlesec}
+\usepackage{titlesec}
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt plus 0pt minus 0pt}
 %\titlespacing*{\section}{0pt}{0pt plus 0pt minus 0pt}{0pt plus 0pt minus 0pt}
