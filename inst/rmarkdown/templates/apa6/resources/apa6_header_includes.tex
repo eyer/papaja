@@ -31,6 +31,7 @@
 
 \makeatletter
 \ifapamodeman{%
+  \@ifundefined{def@noextraspace}{}{%
   \setlength{\parskip}{0pt plus 0pt minus 0pt}
     \b@level@one@skip=-\z@
     \e@level@one@skip=0.1\baselineskip
@@ -42,6 +43,7 @@
     \e@level@four@skip=-\z@
     \b@level@five@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@five@skip=0ex
+    }
 }{}
 \makeatother
 
