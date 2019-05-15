@@ -29,3 +29,19 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+\ifluatex
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setsansfont[Numbers=Lowercase,LetterSpace=3,ItalicFont={Hypatia Sans Pro},ItalicFeatures={FakeSlant=0.2},BoldItalicFont={Hypatia Sans Pro Semibold},BoldItalicFeatures={FakeSlant=0.2},BoldFont={Hypatia Sans Pro Semibold}]{Hypatia Sans Pro}
+\setmonofont{Courier}
+\setmathrm[Numbers=Uppercase]{Warnock Pro}
+\setmathsf{Hypatia Sans Pro}
+\setmathtt{Courier}
+\setromanfont[Numbers=Lowercase,Style=Alternate,ItalicFeatures={Style=Swash},Ligatures={Common}]{Warnock Pro}
+\newfontinstance\titlefontspec[Numbers=Uppercase,Letters=SmallCaps,Style=Alternate]{Warnock Pro}
+\newfontinstance\sectionfontspec[Numbers=Lowercase,Letters=SmallCaps,Style=Alternate]{Warnock Pro}
+\newfontinstance\subsectionfontspec[Numbers=Lowercase,Style=Alternate]{Warnock Pro Italic}
+\newfontinstance\subsubsectionfontspec[Numbers=Lowercase,Style=Alternate]{Warnock Pro Italic}
+\else
+\renewcommand\textsc[1]{\MakeUppercase{#1}}
+\fi
+
