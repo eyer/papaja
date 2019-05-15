@@ -31,20 +31,17 @@
 
 \makeatletter
 \ifapamodeman{%
-  \@ifundefined{def@noextraspace}{}{%
   \setlength{\parskip}{0pt plus 0pt minus 0pt}
-    % redefine the vertical section spacing
-    \b@level@one@skip=0.2\baselineskip \@plus 0.2ex \@minus 0.2ex
-    \e@level@one@skip=0.2\baselineskip \@plus .2ex
+    \b@level@one@skip=-\z@
+    \e@level@one@skip=0.1\baselineskip
     \b@level@two@skip=-\z@
-    \e@level@two@skip=\par -1\baselineskip
-    \b@level@three@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
+    \e@level@two@skip=0.1\baselineskip
+    \b@level@three@skip=0.1\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@three@skip=-\z@
     \b@level@four@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@four@skip=-\z@
     \b@level@five@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@five@skip=0ex
-  }
 }{}
 \makeatother
 
