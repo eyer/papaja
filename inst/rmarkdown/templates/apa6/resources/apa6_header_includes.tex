@@ -28,24 +28,6 @@
 
 \setlength{\parindent}{0.5in}
 \setlength{\parskip}{0pt plus 0pt minus 0pt}
-\makeatletter
-\let\origsection\section
-\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
-
-\newcommand\nostarsection[1]
-{\sectionprelude\origsection{#1}\sectionpostlude}
-
-\newcommand\starsection[1]
-{\sectionprelude\origsection*{#1}\sectionpostlude}
-
-\newcommand\sectionprelude{%
-\vspace{-.25in}
-}
-
-\newcommand\sectionpostlude{%
-\vspace{-.25in}
-}
-\makeatother
 
 \ifluatex
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
