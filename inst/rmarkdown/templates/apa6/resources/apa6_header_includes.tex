@@ -33,15 +33,15 @@
 \ifapamodeman{%
   \@ifundefined{def@noextraspace}{}{%
     % redefine the vertical section spacing
-    \b@level@one@skip=0ex \@plus 0ex \@minus 0ex
-    \e@level@one@skip=0ex \@plus 0ex \@minus 0ex
-    \b@level@two@skip=0ex \@plus 0ex \@minus 0ex
-    \e@level@two@skip=0ex \@plus 0ex \@minus 0ex
-    \b@level@three@skip=0ex \@plus 0ex \@minus 0ex
+    \b@level@one@skip=0.2\baselineskip \@plus 0.2ex \@minus 0.2ex
+    \e@level@one@skip=0.2\baselineskip \@plus .2ex
+    \b@level@two@skip=0.2\baselineskip \@plus 0.2ex \@minus 0.2ex
+    \e@level@two@skip=0.2\baselineskip \@plus 0.2ex
+    \b@level@three@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@three@skip=-\z@
-    \b@level@four@skip=0ex \@plus 0ex \@minus 0ex
+    \b@level@four@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@four@skip=-\z@
-    \b@level@five@skip=0ex \@plus 0ex \@minus 0ex
+    \b@level@five@skip=0\baselineskip \@plus 0.2ex \@minus 0.2ex
     \e@level@five@skip=0ex
   }
 }{}
