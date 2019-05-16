@@ -49,14 +49,18 @@
   \@ifundefined{def@draftfirst}{}{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
-    \RequirePackage{fancyhdr}
-    \rfoot{\sffamily compiled on \today\ at \currenttime}
+    \RequirePackage{datetime}
+    \renewcommand{\dateseparator}{-}
+    \settimeformat{hhmmsstime}
+    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
   }
 }{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
-    \RequirePackage{fancyhdr}
-    \rfoot{\sffamily compiled on \today\ at \currenttime}
+    \RequirePackage{datetime}
+    \renewcommand{\dateseparator}{-}
+    \settimeformat{hhmmsstime}
+    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
 }
 \makeatother
 
