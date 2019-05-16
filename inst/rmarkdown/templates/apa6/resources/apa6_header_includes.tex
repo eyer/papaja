@@ -49,12 +49,14 @@
   \@ifundefined{def@draftfirst}{}{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
-    \rfoot{compiled on \today\ at \currenttime}
+    \RequirePackage{fancyhdr}
+    \rfoot{\sffamily compiled on \today\ at \currenttime}
   }
 }{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
-    \rfoot{compiled on \today\ at \currenttime}
+    \RequirePackage{fancyhdr}
+    \rfoot{\sffamily compiled on \today\ at \currenttime}
 }
 \makeatother
 
