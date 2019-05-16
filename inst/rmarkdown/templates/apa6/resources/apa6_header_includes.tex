@@ -30,6 +30,7 @@
 %\setlength{\parskip}{0pt plus 0pt minus 0pt}
 
 \makeatletter
+\RequirePackage{fancyhdr}
 \ifapamodeman{%
   \@ifundefined{def@noextraspace}{}{%
   \setlength{\parskip}{0pt plus 0pt minus 0pt}
@@ -81,4 +82,5 @@
 \else
 \renewcommand\textsc[1]{\MakeUppercase{#1}}
 \fi
+
 
