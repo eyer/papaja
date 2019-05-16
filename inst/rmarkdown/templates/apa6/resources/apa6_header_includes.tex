@@ -45,7 +45,22 @@
     \e@level@five@skip=-\z@
     }
 }{}
+\@ifundefined{def@draftall}{%
+  \@ifundefined{def@draftfirst}{}{%
+    \SetWatermarkColor{LightGold}
+    \SetWatermarkText{\sffamily FUCK}
+  }
+}{%
+    \SetWatermarkColor{LightGold}
+    \SetWatermarkText{\sffamily FUCK}
+}
 \makeatother
+
+\definecolor{Blue}{rgb}{0.0, 0.2, 0.6}
+\definecolor{Green}{rgb}{0.0, 0.4, 0.2}
+\definecolor{Gold}{rgb}{0.64, 0.57, 0.38}
+\definecolor{Emerald}{rgb}{0.0, 0.38, 0.33}
+\definecolor{LightGold}{rgb}{0.97, 0.91, 0.81}
 
 \ifluatex
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
