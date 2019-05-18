@@ -54,7 +54,7 @@
     \RequirePackage{datetime}
     \renewcommand{\dateseparator}{-}
     \settimeformat{hhmmsstime}
-    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
+    \rfoot{\sffamily\color{Gold} compiled \@date}
   }
 }{%
     \SetWatermarkColor{LightGold}
@@ -62,7 +62,7 @@
     \RequirePackage{datetime}
     \renewcommand{\dateseparator}{-}
     \settimeformat{hhmmsstime}
-    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
+    \rfoot{\sffamily\color{Gold} compiled \@date}
 }
 
 \def\maketitle{
