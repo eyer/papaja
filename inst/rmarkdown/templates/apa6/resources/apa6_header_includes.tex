@@ -198,8 +198,6 @@
   \raggedright%
   \setlength{\parindent}{0.4in}%
 }
-\makeatother
-\makeatother
 
 \usepackage{xcolor}
 \definecolor{Blue}{rgb}{0.0, 0.2, 0.6}
@@ -218,11 +216,11 @@
 \setromanfont[Numbers=Lowercase,Style=Alternate,ItalicFeatures={Style=Swash},Ligatures={Common}]{Warnock Pro}
 \@ifundefined{def@man}{}{%
 \fancypagestyle{titlepage}{%
-    \lhead{\rheadname: \\addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle}}%
+    \lhead{\rheadname: \addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle}}%
     \rhead{\thepage}%
 }
 \fancypagestyle{otherpage}{%
-    \lhead{\MakeUppercase{\@shorttitle}}%
+    \lhead{\addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle}}%
     \rhead{\thepage}%
 }
 \pagestyle{otherpage}
@@ -230,5 +228,8 @@
 \else
 \renewcommand\textsc[1]{\MakeUppercase{#1}}
 \fi
+
+\makeatother
+\makeatother
 
 
