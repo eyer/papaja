@@ -47,21 +47,9 @@
     }
 }{}
 
-\@ifundefined{def@draftall}{%
-  \@ifundefined{def@draftfirst}{}{%
+\@ifundefined{def@draftall}{}{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
-    \RequirePackage{datetime}
-    \renewcommand{\dateseparator}{-}
-    \settimeformat{hhmmsstime}
-    \rfoot{\sffamily\color{Gold} compiled \@date}
-  }
-}{%
-    \SetWatermarkColor{LightGold}
-    \SetWatermarkText{\sffamily DRAFT}
-    \RequirePackage{datetime}
-    \renewcommand{\dateseparator}{-}
-    \settimeformat{hhmmsstime}
     \rfoot{\sffamily\color{Gold} compiled \@date}
 }
 
@@ -73,7 +61,7 @@
   \vspace*{0.5in}
 
   \vspace*{1in}
-  \@title%
+  \@title \@ifundefined{def@draftall}{}{\[DRAFT\]}%
   \ifapamodeman{%
     \@ifundefined{def@noextraspace}{%
       \vspace{0.25in}\\
@@ -217,11 +205,11 @@
 \setromanfont[Numbers=Lowercase,Style=Alternate,ItalicFeatures={Style=Swash},Ligatures={Common}]{Warnock Pro}
 \@ifundefined{def@man}{}{%
 \fancypagestyle{titlepage}{%
-    \lhead{\rheadname: \addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle}}%
+    \lhead{\rheadname: \addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle} \@ifundefined{def@draftall}{}{\[DRAFT\]}}%
     \rhead{\thepage}%
 }
 \fancypagestyle{otherpage}{%
-    \lhead{\addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle}}%
+    \lhead{\addfontfeatures{Numbers=Uppercase}\MakeUppercase{\@shorttitle} \@ifundefined{def@draftall}{}{\[DRAFT\]}}%
     \rhead{\thepage}%
 }
 \pagestyle{otherpage}
