@@ -47,16 +47,23 @@
     }
 }{}
 
-\RequirePackage{ifdraft}
-\ifdraft{%
-    \RequirePackage{draftwatermark}
+\@ifundefined{def@draftall}{%
+  \@ifundefined{def@draftfirst}{}{%
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
     \RequirePackage{datetime}
     \renewcommand{\dateseparator}{-}
     \settimeformat{hhmmsstime}
     \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
-}{}
+  }
+}{%
+    \SetWatermarkColor{LightGold}
+    \SetWatermarkText{\sffamily DRAFT}
+    \RequirePackage{datetime}
+    \renewcommand{\dateseparator}{-}
+    \settimeformat{hhmmsstime}
+    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
+}
 
 \def\maketitle{
 \@ifundefined{hrm}{}{\hrm}
