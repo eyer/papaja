@@ -46,23 +46,17 @@
     \e@level@five@skip=-\z@
     }
 }{}
-\@ifundefined{def@draftall}{%
-  \@ifundefined{def@draftfirst}{}{%
+
+\RequirePackage{ifdraft}
+\ifdraft{%
+    \RequirePackage{draftwatermark}
     \SetWatermarkColor{LightGold}
     \SetWatermarkText{\sffamily DRAFT}
     \RequirePackage{datetime}
     \renewcommand{\dateseparator}{-}
     \settimeformat{hhmmsstime}
     \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
-  }
-}{%
-    \SetWatermarkColor{LightGold}
-    \SetWatermarkText{\sffamily DRAFT}
-    \RequirePackage{datetime}
-    \renewcommand{\dateseparator}{-}
-    \settimeformat{hhmmsstime}
-    \rfoot{\sffamily\color{Gold} compiled \yyyymmdddate\today\ \currenttime}
-}
+}{}
 
 \def\maketitle{
 \@ifundefined{hrm}{}{\hrm}
